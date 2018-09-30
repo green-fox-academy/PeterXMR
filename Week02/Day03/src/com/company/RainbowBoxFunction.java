@@ -12,6 +12,7 @@ public class RainbowBoxFunction {
 
         for (int i = 0; i < 10; i++) {
 
+
         }
         int a = (int) (20+(Math.random()*120));
         int c = (int) (Math.random()*60);
