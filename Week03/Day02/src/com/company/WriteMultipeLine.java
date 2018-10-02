@@ -19,28 +19,29 @@ public class WriteMultipeLine {
             System.out.println("Enter Word:");
             Scanner sc2 = new Scanner(System.in);
             String text = sc2.nextLine();
-
-            System.out.println("Enter Number");
-            Scanner sc3 = new Scanner(System.in);
-            String number = sc3.nextLine();
-
-            PrintWriter worlds = new PrintWriter(fw);
-            worlds.println(text);
-            worlds.close();
-            int nOfChar = text.charAt(0);
+            userCharacter = text.charAt(0);
+            int lOfString = text.length();
+            for (int i = 0; i < lOfString; i++) {
 
 
+
+                PrintWriter worlds = new PrintWriter(fw);
+                worlds.println(lOfString);
+                worlds.close();
+                int nOfChar = text.charAt(0);
+
+            }
         } catch (Exception next) {
             System.out.println("Everything gonna be allright.");
 
         }
 
     }
-        public static void lineWriter (String sc2, int nOfChar){
+        public static void lineWriter (String text, int nOfChar){
 
-            List<String> newlist = new ArrayList<>();
             for (int i = 0; i < nOfChar ; i++) {
-                newlist.add(sc2);
+
+
             }
 
     }
