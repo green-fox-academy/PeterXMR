@@ -9,9 +9,12 @@ public class BunniesAgain {
         if (n <= 0) {
             return 0;
         }
-        else{
-        return 2+bunniesEars(-n);
+        else if (n % 2 != 0){
+            return 2 + bunniesEars(n - 1);
+        }
+        else {
+            return 3+bunniesEars(n -1);
+            }
         }
     }
 
-}
