@@ -1,29 +1,35 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Arrays;
 
-public class Domino implements  Comparable {
+public class Domino implements Comparable <Domino> {
+    private final int[] values;
 
-    public int compareTo(Object o) {
-        return 0;
+    public Domino(int valueA, int valueB) {
+        this.values = new int[]{valueA, valueB};
     }
 
-    public Domino(int a, int b) {
-
-        List<Domino> dominoes = new ArrayList<>();
-        dominoes.add(new Domino(5, 2));
-        dominoes.add(new Domino(4, 6));
-        dominoes.add(new Domino(1, 5));
-        dominoes.add(new Domino(6, 7));
-        dominoes.add(new Domino(2, 4));
-        dominoes.add(new Domino(7, 1));
-
-        /*
-        Collections.sort(dominoes);
-        for (Domino Domino )
+    public int[] getValues() {
+        return values;
     }
-    public int compare (int a, int b) {
-    return compareTo();
-    */
+
+    @Override
+    public String toString() {
+        return "[" + values[0] + ", " + values[1] + "]";
+    }
+
+    @Override
+    public int compareTo(Domino o) {
+        if (this.getValues()[0]>o.getValues()[0]) {
+            return 1;
+        }
+        else if (this.getValues()[0]==o.getValues()[0]) {
+            return 0;
+        }
+        else {
+            return -1;
+        }
+
     }
 }
