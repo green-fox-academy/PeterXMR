@@ -5,6 +5,11 @@ import java.util.List;
 public class Dominoes{
 
     public static void main(String[] args) {
+
+        Gnirts g = new Gnirts("example");
+        System.out.println(g.charAt(1));
+// should print out: l
+
         List<Domino> dominoes = new ArrayList<>();
         dominoes.add(new Domino(5, 2));
         dominoes.add(new Domino(4, 6));
