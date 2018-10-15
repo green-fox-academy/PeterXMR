@@ -6,7 +6,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class Testcase {
+public class TestForSum {
     public Sum fisrstSum = new Sum();
     int a;
     int b;

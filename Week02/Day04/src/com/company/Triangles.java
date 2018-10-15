@@ -16,6 +16,8 @@ public class Triangles {
         /*graphics.drawLine(x1,y1,x2,y2);
         graphics.drawLine(x1,y1,x3,y3);
         graphics.drawLine(x2,y2,x3,y3);*/
+
+
         for (int a = 0; a <= 420; a += 30) {
             int b = +80;
             int x = +60;
@@ -23,6 +25,7 @@ public class Triangles {
             graphics.drawLine(x1 + a - x, y1+ b, x3 + a - x, y3+ b);
             graphics.drawLine(x2 + a - x, y2+ b, x3 + a - x, y3+ b);
         }
+
         for (int a = 0; a <= 390; a += 30) {
             int b = +60;
             int x = +45;
@@ -30,6 +33,8 @@ public class Triangles {
             graphics.drawLine(x1 + a - x, y1+ b, x3 + a - x, y3+ b);
             graphics.drawLine(x2 + a - x, y2+ b, x3 + a - x, y3+ b);
         }
+
+
         for (int a = 0; a <= 360; a += 30) {
             int b = +40;
             int x = +30;
@@ -44,6 +49,8 @@ public class Triangles {
             graphics.drawLine(x1 + a - x, y1+ b, x3 + a - x, y3+ b);
             graphics.drawLine(x2 + a - x, y2+ b, x3 + a - x, y3+ b);
         }
+
+
         for (int a = 0; a <= 300; a += 30) {
             graphics.drawLine(x1 + a, y1, x2 + a, y2);
             graphics.drawLine(x1 + a, y1, x3 + a, y3);
@@ -96,6 +103,7 @@ public class Triangles {
             graphics.drawLine(x2 + c + x, y2 + b, x3 + c + x, y3 + b);
         }
 
+
         for (int c = 0; c <= 120; c += 30) {
             int b = -120;
             int x = +90;
@@ -105,6 +113,7 @@ public class Triangles {
             graphics.drawLine(x2 + c + x, y2 + b, x3 + c + x, y3 + b);
         }
 
+
         for (int c = 0; c <= 90; c += 30) {
             int b = -140;
             int x = +105;
@@ -113,6 +122,7 @@ public class Triangles {
             graphics.drawLine(x1 + c + x, y1 + b, x3 + c + x, y3 + b);
             graphics.drawLine(x2 + c + x, y2 + b, x3 + c + x, y3 + b);
         }
+
         for (int c = 0; c <= 60; c += 30) {
             int b = -160;
             int x = +120;
@@ -121,6 +131,8 @@ public class Triangles {
             graphics.drawLine(x1 + c + x, y1 + b, x3 + c + x, y3 + b);
             graphics.drawLine(x2 + c + x, y2 + b, x3 + c + x, y3 + b);
         }
+
+
         for (int c = 0; c <= 30; c += 30) {
             int b = -180;
             int x = +135;
@@ -129,6 +141,8 @@ public class Triangles {
             graphics.drawLine(x1 + c + x, y1 + b, x3 + c + x, y3 + b);
             graphics.drawLine(x2 + c + x, y2 + b, x3 + c + x, y3 + b);
         }
+
+
         int b = -200;
         int x = +150;
         graphics.drawLine(x1 + x, y1 + b, x2 + x, y2 + b);
