@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table>
+            <tr th:each="account : ${bankAccounts}">
+                <td th:text="${accountStat.index}"></td>
+                <td th:text="${account.name}" th:style="${account.name.equals('King')}?'color:gold'"></td>
+                <td th:text="${account.balance}"></td>
+                <td th:text="${account.animaltype}"></td>
+        </tr>
+    </table>
+</body>
+</html>
