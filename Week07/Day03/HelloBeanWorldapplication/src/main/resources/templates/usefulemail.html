@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="|${email}|"><p th:style="'color:green'" th:text= "'This link is valid: ' + ${input}"></div>
+<div th:unless="|${email}|"><p th:style= "'color:red'" th:text= "'This link is not valid'"></div>
+</body>
+</html>

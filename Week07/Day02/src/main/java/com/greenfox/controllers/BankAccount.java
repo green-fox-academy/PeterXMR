@@ -12,12 +12,9 @@ import java.util.List;
 
 public class BankAccount {
 
-
-
     public String name;
     public Double balance;
     public String animaltype;
-
 
     public BankAccount (String name,Double balance,String animaltype) {
         this.name = name;

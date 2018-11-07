@@ -26,7 +26,7 @@ public class Endpoint {
     BankAccount account02 = new BankAccount("Nemo", 3000.00,"fish");
     BankAccount account03 = new BankAccount("King",4000.00,"dog");
     BankAccount account04 = new BankAccount("Izabela",2500.00,"duck");
-    
+
     bankAccounts.add( account01 );
     bankAccounts.add( account04 );
     bankAccounts.add( account02 );
