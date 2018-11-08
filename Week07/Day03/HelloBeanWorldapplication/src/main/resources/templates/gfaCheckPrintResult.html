@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
 </head>
 <body>
-$END$
+<form action="/gfa/check" method="post">
+    Check if student name is already saved: <input type="text" name="checkForStudent">
+    <input type="submit" value="Check">
+</form>
+<div th:if="${studentnames}"><p th:style="'color:green'" th:text= "'This name already is in database.'"></div>
+<div th:unless="${studentIsInDatabase}"><p th:style="'color:red'" th:text= "'This name isn't in database.'"></div>
 </body>
 </html>

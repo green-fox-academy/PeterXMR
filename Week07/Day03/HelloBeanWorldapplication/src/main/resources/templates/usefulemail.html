@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<a class="home" href="http://localhost:8080/useful/">Homescreen</a>
+<br>
 <div th:if="|${email}|"><p th:style="'color:green'" th:text= "'This link is valid: ' + ${input}"></div>
 <div th:unless="|${email}|"><p th:style= "'color:red'" th:text= "'This link is not valid'"></div>
 </body>

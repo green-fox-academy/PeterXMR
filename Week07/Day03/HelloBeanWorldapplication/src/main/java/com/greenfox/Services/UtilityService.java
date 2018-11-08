@@ -1,11 +1,9 @@
-package com.greenfox.controllers;
+package com.greenfox.Services;
 
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Service
 public class UtilityService  {

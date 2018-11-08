@@ -1,5 +1,7 @@
-package com.greenfox.controllers;
+package com.greenfox.Colors;
 
+import com.greenfox.MyColor;
+import com.greenfox.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

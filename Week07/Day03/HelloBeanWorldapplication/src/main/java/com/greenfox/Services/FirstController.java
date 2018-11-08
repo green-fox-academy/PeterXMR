@@ -1,15 +1,12 @@
-package com.greenfox.controllers;
+package com.greenfox.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.ArrayList;
 
 
 @Controller
@@ -72,7 +69,7 @@ public class FirstController {
     }
 
     @GetMapping("gfa/check")
-    public String stringsmodel(Model model) {
+    public String stringsmodel(Model model,String name) {
         model.addAttribute( "studentnames", students.findAll() );
         return "gfacheck";
 

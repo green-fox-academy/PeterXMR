@@ -1,4 +1,4 @@
-package com.greenfox.controllers;
+package com.greenfox;
 
 import org.springframework.stereotype.Service;
 

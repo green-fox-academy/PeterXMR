@@ -1,9 +1,6 @@
 package com.greenfox;
 
-import com.greenfox.controllers.MyColor;
-import com.greenfox.controllers.Printer;
-import com.greenfox.controllers.RedColor;
-import com.greenfox.controllers.UtilityService;
+import com.greenfox.Services.UtilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;

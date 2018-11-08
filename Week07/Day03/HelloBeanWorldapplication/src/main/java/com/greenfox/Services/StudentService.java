@@ -1,4 +1,4 @@
-package com.greenfox.controllers;
+package com.greenfox.Services;
 
 import org.springframework.stereotype.Service;
 
@@ -33,4 +33,8 @@ public class StudentService {
     public void count() {
             counter ++;
         }
+
+    public Boolean checkname (String name) {
+        return (names.contains( name ));
+    }
     }

@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
 </head>
-<body>
-<td th:text="${}"></td>
+<style>
+    body {
+        background-color: aliceblue;
+    }
+    .home {
+        color: black;
+        font-size: 15px;
+    }
+</style>
+<body style="font-size: 25px">
 
+
+<a class="home" href="http://localhost:8080/useful/">Home</a>
+<br>
+<a th:utext="'Text: ' + ${text} + '<br>Number: ' + ${number}"/>
+<br>
+<a th:text="'Encode input is: ' + ${textforencoding}"/>
+<br>
+<a th:text="'Decode input is: ' + ${textfordecoding}"/>
+<br>
 </body>
 </html>
