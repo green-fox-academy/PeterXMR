@@ -30,22 +30,11 @@ public class UtilityService  {
         return colors.get(random.nextInt(colors.size()));
     }
 
-    public String caesarEndocing(String text, int number) {
+    public String caesar(String text, int number) {
         String result = "";
         for(int i = 0; i < text.length(); i++) {
             result += (char)((int)text.charAt(i) + number);
         }
         return result;
-    }
-
-    public String caesarDeocing(String text, int number) {
-        String result02 = "";
-        for(int i = 0; i < text.length(); i++) {
-            result02 += (char)((int)text.charAt(i) + number);
-        }
-        return result02;
-    }
-
-    private class Pattecrn {
     }
 }
