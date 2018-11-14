@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<a href="http://localhost:8080/info">Information</a>
+<a href="http://localhost:8080/info">Nutrition store</a>
+<a href="http://localhost:8080/info">Trick center</a>
+<a href="http://localhost:8080/info">Action history</a>
+<header></header>
+<main><form th:method="post" th:action="'/nutritionStore/' + ${fox.getName()}">
+    <label for="foodSelection" th:text="'Food'"></label>
+    <select id="foodSelection" name="food">
+        <option th:text="'Pizza'"></option>
+        <option th:text="'Burger'"></option>
+        <option th:text="'Tortilla'"></option>
+        <option th:text="'Nachos'"></option>
+    </select>
+    <label for="drinkSelection" th:text="'Drink'"></label>
+    <select id="drinkSelection" name="drink">
+        <option th:text="'Water'"></option>
+        <option th:text="'Coke'"></option>
+        <option th:text="'Water'"></option>
+        <option th:text="'Coke'"></option>
+    </select>
+    <button type="submit" th:text="'Change'"></button>
+</form>
+
+</main>
+</body>
+</html>

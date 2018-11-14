@@ -72,6 +72,5 @@ public class FirstController {
     public String stringsmodel(Model model,String name) {
         model.addAttribute( "studentnames", students.findAll() );
         return "gfacheck";
-
     }
 }

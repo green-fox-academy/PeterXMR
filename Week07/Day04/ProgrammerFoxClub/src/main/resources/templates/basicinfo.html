@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<main>
+    <br>
+    <a href="http://localhost:8080">Homepage</a>
+    <br>
+    <a href="http://localhost:8080/info">Information</a>
+    <br>
+    <a href="http://localhost:8080/login">Login</a>
+    <br>
+    <img src="greenfox.png">
+    <br>
+    <div th:text="'This is '+ ${fox.getName()} "></div>
+</main>
+</body>
+</html>
