@@ -6,33 +6,50 @@
     <link th:href="'style.css'" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 <main>
     <table>
         <tr>
             <h1 th:size="30px" th:text="'Todos for today:'"></h1>
         </tr>
 
-        <a href="/todo/add">Add new todo</a>
+        <div class="topnav">
+            <a href="/todo/add">Add new todo</a>
+            <a href="/sortByTitle">Sort by title</a>
+            <a href="/sortById">Sort by ID</a>
+            <form th:action="|/findByTitleContaining|" th:method="post">
+                <input type="text" name="keyword" placeholder="Search by title/content/description...">
+                <input type="submit">Submit</input>
+            </form>
+            <br>
+            <a href="findByDoneIsTrue">Sort only done todos</a>
+            <a href="findByDoneIsFalse">Sort only not done todos</a>
+            <a href="findByUrgentIsTrue">Sort only urgent todos</a>
+            <a href="findByUrgentIsFalse">Sort only not urgent todos</a>
+        </div>
+
         <tr>
             <th>Id</th>
             <th>Action</th>
             <th>Done</th>
             <th>Urgent</th>
         </tr>
-            <div th:each="todo : ${todos}">
-        <tr>
-            <td th:text="${todo.getId()}"></td>
-            <td th:text="${todo.getTitle()}"></td>
-            <td th:text="${todo.getDone()}"></td>
-            <td th:text="${todo.getUrgent()}"></td>
-            <td>
-                <form th:action="|/${todo.getId()}/delete|" th:method="post">
-                    <button>Delete</button>
-                </form>
-            </td>
-            <td><a th:href="'/'+${todo.getId()}+'/edit'">Update</a></td>
-        </tr>
+
+        <div th:each="todo : ${todos}">
+            <tr>
+                <td th:text="${todo.getId()}"></td>
+                <td th:text="${todo.getTitle()}"></td>
+                <td th:text="${todo.getDone()}"></td>
+                <td th:text="${todo.getUrgent()}"></td>
+                <td>
+                    <form th:action="|/${todo.getId()}/delete|" th:method="post">
+                        <button>Delete</button>
+                    </form>
+                </td>
+                <td><a th:href="'/'+${todo.getId()}+'/edit'">Update</a></td>
+            </tr>
         </div>
+
     </table>
 </main>
 </body>

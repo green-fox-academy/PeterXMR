@@ -16,8 +16,8 @@ public class Main implements CommandLineRunner {
     @Autowired
     TodoRepository todoRepository;
 
-    public static void main(String [] args) {
-        SpringApplication.run(Main.class,args );
+    public static void main(String[] args) {
+        SpringApplication.run( Main.class, args );
     }
 
     /**
@@ -28,5 +28,5 @@ public class Main implements CommandLineRunner {
      */
     @Override
     public void run(String... args) throws Exception {
-}
+    }
 }
