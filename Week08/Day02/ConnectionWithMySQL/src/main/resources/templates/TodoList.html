@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href="'style.css'" rel="stylesheet" type="text/css">
+    <link th:href="'/style.css'" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -15,17 +15,16 @@
 
         <div class="topnav">
             <a href="/todo/add">Add new todo</a>
-            <a href="/sortByTitle">Sort by title</a>
-            <a href="/sortById">Sort by ID</a>
+            <a href="/todo/?order=byTitle">Sort by title</a>
+            <a href="/todo/?order=byId">Sort by ID</a><br>
             <form th:action="|/findByTitleContaining|" th:method="post">
                 <input type="text" name="keyword" placeholder="Search by title/content/description...">
-                <input type="submit">Submit</input>
-            </form>
-            <br>
-            <a href="findByDoneIsTrue">Sort only done todos</a>
-            <a href="findByDoneIsFalse">Sort only not done todos</a>
-            <a href="findByUrgentIsTrue">Sort only urgent todos</a>
-            <a href="findByUrgentIsFalse">Sort only not urgent todos</a>
+                <input type="submit"> </input>
+            </form><br>
+            <a href="/todo/?find=byDoneIsTrue">Sort only: done todos</a>
+            <a href="/todo/?find=byDoneIsFalse">Sort only: not done todos</a>
+            <a href="/todo/?find=byUrgentIsTrue">Sort only: urgent todos</a>
+            <a href="/todo/?find=byUrgentIsFalse">Sort only: not urgent todos</a>
         </div>
 
         <tr>
@@ -46,7 +45,7 @@
                         <button>Delete</button>
                     </form>
                 </td>
-                <td><a th:href="'/'+${todo.getId()}+'/edit'">Update</a></td>
+                <td><a class="update" th:href="'/'+${todo.getId()}+'/edit'">Update</a></td>
             </tr>
         </div>
 

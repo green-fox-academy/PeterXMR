@@ -25,5 +25,5 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
     List<Todo> findByUrgentIsTrue();
 
     List<Todo> findByUrgentIsFalse();
-}
 
+}

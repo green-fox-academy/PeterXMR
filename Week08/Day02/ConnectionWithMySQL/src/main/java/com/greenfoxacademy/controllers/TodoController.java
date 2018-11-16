@@ -28,79 +28,69 @@ public class TodoController {
         return "TodoList";
     }
 
-    @GetMapping(value = "/sortByTitle")
-    public String orderByTitle(Model model) {
-        model.addAttribute( "todos", todoRepository.findAllByOrderByTitleAsc() );
+    @GetMapping(value = "/todo/")
+    public String buttonManipulation(Model model, @RequestParam(value = "order", required = false) String order, @RequestParam(value = "find", required = false) String find) {
+        if (order != null) {
+            if (order.equals( "byTitle" )) {
+                model.addAttribute( "todos", todoRepository.findAllByOrderByTitleAsc() );
+            } else if (order.equals( "byId" )) {
+                model.addAttribute( "todos", todoRepository.findAllByOrderByIdAsc() );
+            }
+        }
+
+        else if (find != null) {
+            if (find.equals( "byDoneIsTrue" )) {
+                model.addAttribute( "todos", todoRepository.findByDoneIsTrue() );
+            } else if (find.equals( "byDoneIsFalse" )) {
+                model.addAttribute( "todos", todoRepository.findByDoneIsFalse() );
+            } else if (find.equals( "byUrgentIsTrue" )) {
+                model.addAttribute( "todos", todoRepository.findByUrgentIsTrue() );
+            } else if (find.equals( "byUrgentIsFalse" )) {
+                model.addAttribute( "todos", todoRepository.findByUrgentIsFalse() );
+            }
+        }
         return "TodoList";
     }
 
-    @GetMapping(value = "/findByDoneIsTrue")
-    public String findByDoneIsTrue(Model model) {
-        model.addAttribute( "todos", todoRepository.findByDoneIsTrue() );
-        return "TodoList";
-    }
+        @PostMapping(value = "/findByTitleContaining")
+        public String findByTitleContaining (Model model, String keyword){
+            model.addAttribute( "todos", todoRepository.findByTitleContaining( keyword ) );
+            return "Todolist";
+        }
 
-    @GetMapping(value = "/findByDoneIsFalse")
-    public String findByDoneIsFalse(Model model) {
-        model.addAttribute( "todos", todoRepository.findByDoneIsFalse() );
-        return "TodoList";
-    }
+        @GetMapping("/todo/add")
+        public String addForm () {
+            return "add";
+        }
 
-    @GetMapping(value = "/findByUrgentIsTrue")
-    public String findByUrgentIsTrue(Model model) {
-        model.addAttribute( "todos", todoRepository.findByUrgentIsTrue() );
-        return "TodoList";
-    }
+        @PostMapping("/todo/add")
+        public String addTask (String title){
+            todoRepository.save( new Todo( title ) );
+            return "redirect:/";
+        }
 
-    @GetMapping(value = "/findByUrgentIsFalse")
-    public String findByUrgentIsFalse(Model model) {
-        model.addAttribute( "todos", todoRepository.findByUrgentIsFalse() );
-        return "TodoList";
-    }
+        @PostMapping(value = "/{id}/delete")
+        public String delete (@PathVariable("id") Long id){
+            todoRepository.deleteById( id );
+            return "redirect:/";
+        }
 
 
-    @GetMapping(value = "/sortById")
-    public String sortById(Model model) {
-        model.addAttribute( "todos", todoRepository.findAllByOrderByIdAsc() );
-        return "TodoList";
-    }
+        @GetMapping("/{id}/edit")
+        public String editTask (@PathVariable() Long id, Model model){
+            model.addAttribute( "task", todoRepository.findById( id ).get() );
+            return "edit";
+        }
 
-    @PostMapping(value = "/findByTitleContaining")
-    public String findByTitleContaining(Model model, String keyword) {
-        model.addAttribute( "todos", todoRepository.findByTitleContaining( keyword ) );
-        return "Todolist";
-    }
+        @PostMapping("/{id}/edit")
+        public String editTasks (@PathVariable() Long id, String title, @RequestParam(defaultValue = "false") Boolean
+        done, @RequestParam(defaultValue = "false") Boolean urgent){
+            Todo upgradedTodo = todoRepository.findById( id ).get();
+            upgradedTodo.setTitle( title );
+            upgradedTodo.setDone( done );
+            upgradedTodo.setUrgent( urgent );
+            todoRepository.save( upgradedTodo );
+            return "redirect:/";
 
-    @GetMapping("/todo/add")
-    public String addForm() {
-        return "add";
-    }
-
-    @PostMapping("/todo/add")
-    public String addTask(String title) {
-        todoRepository.save( new Todo( title ) );
-        return "redirect:/";
-    }
-
-    @PostMapping(value = "/{id}/delete")
-    public String delete(@PathVariable("id") Long id) {
-        todoRepository.deleteById( id );
-        return "redirect:/";
-    }
-
-    @GetMapping("/{id}/edit")
-    public String editTask(@PathVariable() Long id, Model model) {
-        model.addAttribute( "task", todoRepository.findById( id ).get() );
-        return "edit";
-    }
-
-    @PostMapping("/{id}/edit")
-    public String editTasks(@PathVariable() Long id, String title, @RequestParam(defaultValue = "false") Boolean done, @RequestParam(defaultValue = "false") Boolean urgent) {
-        Todo upgradedTodo = todoRepository.findById( id ).get();
-        upgradedTodo.setTitle( title );
-        upgradedTodo.setDone( done );
-        upgradedTodo.setUrgent( urgent );
-        todoRepository.save( upgradedTodo );
-        return "redirect:/";
     }
 }
