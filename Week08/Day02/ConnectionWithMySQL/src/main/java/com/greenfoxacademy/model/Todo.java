@@ -20,19 +20,12 @@ public class Todo {
     @Temporal(TemporalType.TIMESTAMP)
     private Date postedOn;
 
-    //id: long, title: String, urgent: boolean(default false), done: boolean(default false)
     public Todo(String title) {
         this.title = title;
     }
 
     public Todo() {
     }
-
-//    public String searchByTitle(String title,String searchedTitle){
-//        String description[] = title.split( " " );
-//        if (description.toString().contains(  ) searchedTitle.re);
-//        return ;
-//    }
 
     public String getTitle() {
         return title;
