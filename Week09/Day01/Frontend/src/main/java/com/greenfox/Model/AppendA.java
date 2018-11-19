@@ -1,18 +1,22 @@
 package com.greenfox.Model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AppendA {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("appended")
     String appendable;
 
-    public String getAppendable (String appended) {
-        appended = appendable + "a";
-        return appendable;
+    public AppendA (String appendable) {
+        this.appendable = appendable + "a";
     }
 
     public void setAppendable(String appendable) {
         this.appendable = appendable;
+    }
+
+    public String getAppendable() {
+        return appendable;
     }
 }

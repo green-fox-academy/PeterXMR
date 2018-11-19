@@ -1,10 +1,10 @@
 package com.greenfox.Controllers;
 
 import com.greenfox.Model.AppendA;
+import com.greenfox.Model.DoUntil;
 import com.greenfox.Model.Greeter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfox.Model.Number;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
@@ -36,7 +36,12 @@ public class MyRestController {
     }
 
     @GetMapping("/appenda/{appendable}")
-    public Object appenda (@RequestParam(value = "appenda")String appenda){
-        return ;
+    public Object appenda (@PathVariable(value = "appendable")String appendable){
+        return new AppendA (appendable);
+    }
+
+    @PostMapping("/dountil/{action}")
+    public Object dountil (@PathVariable ("action")String action, @RequestBody(required = false) Number until) {
+        return new DoUntil( action, until );
     }
 }
