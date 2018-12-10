@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link th:href="'/style.css'" rel="stylesheet" type="text/css">
+</head>
+<body>
+<tr>
+    <div th:each="message : ${messages}"><p th:text="${message.getTitle()}"></p></div>
+</tr>
+</body>
+</html>

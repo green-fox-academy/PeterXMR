@@ -23,7 +23,12 @@ public class TodoController {
     }
 
     @GetMapping(value = "/")
-    public String orderById(Model model) {
+    public String showWelcome () {
+        return "welcome";
+    }
+
+    @GetMapping(value = "/todo")
+    public String showAll(Model model) {
         model.addAttribute( "todos", todoRepository.findAll() );
         return "TodoList";
     }

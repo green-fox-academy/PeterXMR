@@ -1,32 +1,28 @@
 package com.greenfoxacademy;
 
-
-import com.greenfoxacademy.model.Todo;
-import com.greenfoxacademy.repository.TodoRepository;
+import com.greenfoxacademy.model.Client;
+import com.greenfoxacademy.repository.TodoClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
-
     @Autowired
-    TodoRepository todoRepository;
+    TodoClientRepository todoClientRepository;
+    @Autowired
+    PasswordEncoder encoder;
 
     public static void main(String[] args) {
-        SpringApplication.run( Main.class, args );
+
+        SpringApplication.run(Main.class, args);
     }
 
-    /**
-     * Callback used to run the bean.
-     *
-     * @param args incoming main method arguments
-     * @throws Exception on error
-     */
     @Override
     public void run(String... args) throws Exception {
+        todoClientRepository.save(new Client("Peter", encoder.encode("verySecurePassword")));
     }
 }

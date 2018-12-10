@@ -1,0 +1,72 @@
+body {
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    display: flex;
+    margin: 10px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+table {
+    border-width: 5px;
+    border-style: groove;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-bottom: 10px;
+    background-color: sandybrown;
+    height: 30px;
+}
+
+h1 {
+    background-color: sandybrown;
+    border-radius: 5px;
+    border-width: 5px;
+    border-style: groove;
+}
+
+tr {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: burlywood;
+    height: 30px;
+}
+
+tr:nth-child(odd) {
+    background-color: aliceblue;
+    height: 30px;
+}
+
+td {
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+}
+
+input {
+    height: 20px;
+    width: 270px;
+}
+
+a {
+    border-radius: 5px;
+    background: rgb(66, 184, 221);
+    text-decoration-color: gainsboro;
+}
+
+button {
+    border-color: #f05053;
+    background-color: #f05053 ;
+    text-color: black;
+    transition: all 150ms ease-in-out;
+}
+
+update {
+    background-color: #47ed44
+}

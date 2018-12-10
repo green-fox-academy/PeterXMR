@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="'/style.css'" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<main>
+    <table>
+        <tr>
+            <h1 th:size="30px" th:text="'Todos for today:'"></h1>
+        </tr>
+
+        <div class="topnav">
+            <a href="/todo/add">Add new todo</a>
+            <a href="/todo/?order=byTitle">Sort by title</a>
+            <a href="/todo/?order=byId">Sort by ID</a><br>
+            <form th:action="|/findByTitleContaining|" th:method="post">
+                <input type="text" name="keyword" placeholder="Search by title/content/description...">
+                <input type="submit"> </input>
+            </form><br>
+            <a href="/todo/?find=byDoneIsTrue">Sort only: done todos</a>
+            <a href="/todo/?find=byDoneIsFalse">Sort only: not done todos</a>
+            <a href="/todo/?find=byUrgentIsTrue">Sort only: urgent todos</a>
+            <a href="/todo/?find=byUrgentIsFalse">Sort only: not urgent todos</a>
+        </div>
+
+        <tr>
+            <th>Id</th>
+            <th>Action</th>
+            <th>Done</th>
+            <th>Urgent</th>
+        </tr>
+
+        <div th:each="todo : ${todos}">
+            <tr>
+                <td th:text="${todo.getId()}"></td>
+                <td th:text="${todo.getTitle()}"></td>
+                <td th:text="${todo.getDone()}"></td>
+                <td th:text="${todo.getUrgent()}"></td>
+                <td>
+                    <form th:action="|/${todo.getId()}/delete|" th:method="post">
+                        <button>Delete</button>
+                    </form>
+                </td>
+                <td><a class="update" th:href="'/'+${todo.getId()}+'/edit'">Update</a></td>
+            </tr>
+        </div>
+
+    </table>
+</main>
+</body>
+</html>
